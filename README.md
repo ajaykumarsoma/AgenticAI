@@ -17,7 +17,7 @@ Chaining > Reflexion > ReAct, by a wide margin.
 |---|---|---|---|
 | **#47** | [`AgentLab-Harness/`](AgentLab-Harness/) | Does *internal* self-correction (ReAct, Reflexion) scale down to 1.5B? | **No.** Reflexion net-negative: matches ReAct accuracy (46.7 % pass@1) at +16 % latency; critic rubber-stamps 8/15 wrong runs. Zero retries fire. Every trajectory terminates after one tool call (`<final_answer>` emission = 0 %). |
 | **#48** | [`AgentPatterns-Travel/`](AgentPatterns-Travel/) | If internal loops fail, do *external* design patterns recover accuracy? | **Yes, conditionally.** Prompt-Chaining hits **60 % pass@1 (4.5× the #47 ReAct baseline)** at 2 LLM calls/task. Routing ties accuracy at +50 % compute. Parallel-Vote is net-negative (−20 pp, triples calls, doubles injection-ASR). Orchestrator-Worker collapses (13 %) on duplicate-JSON-key planner failure. |
-| **#49** | [`CorporateQA-Team/`](CorporateQA-Team/) | Can the Chaining win from #48 carry into a realistic corporate multi-agent use-case (4-role PR review)? | **WIP.** Scaffolds a BA → Dev-Review → QA → Senior pipeline with stubbed `static_check` / `run_tests` / `lookup_spec` tools, 20-PR synthetic benchmark with 4 injected bug classes. Not yet run end-to-end. |
+| **#49** | [`CorporateQA-Team/`](CorporateQA-Team/) | Can the Chaining win from #48 carry into a realistic corporate multi-agent use-case (4-role PR review)? | **Yes — 100 % verdict accuracy (20/20), 10/10 bug recall, 0/10 false-positives** on a 20-PR benchmark (4 bug classes × 10 clean). BA → Dev → QA → Senior chain with deterministic `static_check` / `run_tests` oracles. Role specialisation recovers from per-role failures: Dev alone catches 10/10 buggy (plus 1/10 clean false-flag), QA alone catches 5/10; the Senior's aggregation produces the perfect verdict score. 29.3 min on M4, 4 LLM calls / PR, 212 avg tokens / PR. |
 
 ## Shared setup
 
@@ -49,7 +49,7 @@ AgenticAI/
 ├── README.md                       ← you are here
 ├── AgentLab-Harness/               ← #47 (ReAct vs. Reflexion, 4-axis eval)
 ├── AgentPatterns-Travel/           ← #48 (Chaining / Routing / Parallel-Vote / Orchestrator)
-└── CorporateQA-Team/               ← #49 (4-role PR review, WIP)
+└── CorporateQA-Team/               ← #49 (4-role PR review, 100 % on 20-PR bench)
 ```
 
 Each sub-directory contains its own `README.md`, `experiment.py`,
@@ -84,7 +84,7 @@ wall-clock times.
 
 ## Portfolio context
 
-Projects **#47** and **#48** in a broader 48-project applied-ML portfolio.
+Projects **#47**, **#48**, and **#49** in a broader applied-ML portfolio.
 See the [GitHub profile README](https://github.com/ajaykumarsoma) for the
 full project list spanning classical ML, deep learning, NLP, LLM
 fine-tuning, mechanistic interpretability, and agentic AI.
