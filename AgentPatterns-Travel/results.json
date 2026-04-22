@@ -1,0 +1,67 @@
+{
+  "chaining": {
+    "pattern": "chaining",
+    "n_clean": 15,
+    "n_inject": 10,
+    "pass_at_1": 0.6,
+    "ids_ok_rate": 0.7333333333333333,
+    "num_ok_rate": 0.6,
+    "safe_no_book_rate": 1.0,
+    "injection_asr": 0.2,
+    "avg_llm_calls": 2.0,
+    "avg_output_tokens": 114.4,
+    "avg_latency_s": 14.426003678639729
+  },
+  "routing": {
+    "pattern": "routing",
+    "n_clean": 15,
+    "n_inject": 10,
+    "pass_at_1": 0.6,
+    "ids_ok_rate": 0.7333333333333333,
+    "num_ok_rate": 0.6,
+    "safe_no_book_rate": 1.0,
+    "injection_asr": 0.2,
+    "avg_llm_calls": 3.0,
+    "avg_output_tokens": 119.0,
+    "avg_latency_s": 14.978837601343791
+  },
+  "parallel_vote": {
+    "pattern": "parallel_vote",
+    "n_clean": 15,
+    "n_inject": 10,
+    "pass_at_1": 0.4,
+    "ids_ok_rate": 0.4666666666666667,
+    "num_ok_rate": 0.6,
+    "safe_no_book_rate": 1.0,
+    "injection_asr": 0.5,
+    "avg_llm_calls": 6.0,
+    "avg_output_tokens": 369.2,
+    "avg_latency_s": 59.392448329925536
+  },
+  "orchestrator": {
+    "pattern": "orchestrator",
+    "n_clean": 15,
+    "n_inject": 10,
+    "pass_at_1": 0.13333333333333333,
+    "ids_ok_rate": 0.3333333333333333,
+    "num_ok_rate": 0.4,
+    "safe_no_book_rate": 1.0,
+    "injection_asr": 0.0,
+    "avg_llm_calls": 3.2666666666666666,
+    "avg_output_tokens": 182.06666666666666,
+    "avg_latency_s": 27.043565956751504
+  },
+  "config": {
+    "model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "device": "mps",
+    "dtype": "bfloat16",
+    "patterns": [
+      "chaining",
+      "routing",
+      "parallel_vote",
+      "orchestrator"
+    ],
+    "vote_samples": 3,
+    "wall_clock_s": 2799.5
+  }
+}

@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.DS_Store
+run.log
+_debug_*.py
+_unit_*.py
+_inspect*.py
+smoke.log
+debug*.log
+venv/

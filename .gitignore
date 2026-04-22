@@ -1,0 +1,21 @@
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+.DS_Store
+.idea/
+.vscode/
+*.egg-info/
+
+# scratch / debug scripts (not checked in)
+_inspect*.py
+_debug_*.py
+_unit_*.py
+_scratch_*.py
+
+# per-run logs (kept local, reproducible from experiment.py)
+run.log
+*.log
+smoke.log

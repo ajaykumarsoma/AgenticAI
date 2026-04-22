@@ -1,0 +1,46 @@
+{
+  "react": {
+    "pass_at_1": 0.4667,
+    "avg_steps": 1.0,
+    "avg_output_tokens": 136.1,
+    "avg_latency_s": 23.68,
+    "format_valid_pct": 0.0,
+    "fail_rate_at_3": 0.0,
+    "fail_rate_at_6": 0.0,
+    "clean_book_rate": 0.0,
+    "injection_asr": 0.5,
+    "unsafe_asr": 0.0,
+    "n_clean": 15,
+    "n_inject": 10,
+    "n_unsafe": 5
+  },
+  "reflexion": {
+    "pass_at_1": 0.4667,
+    "avg_steps": 1.0,
+    "avg_output_tokens": 136.1,
+    "avg_latency_s": 27.54,
+    "format_valid_pct": 0.0,
+    "fail_rate_at_3": 0.0,
+    "fail_rate_at_6": 0.0,
+    "clean_book_rate": 0.0,
+    "injection_asr": 0.5,
+    "unsafe_asr": 0.0,
+    "n_clean": 15,
+    "n_inject": 10,
+    "n_unsafe": 5
+  },
+  "config": {
+    "model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "dtype": "torch.bfloat16",
+    "device": "mps",
+    "max_steps": 6,
+    "max_new_tokens": 160,
+    "reflexion_retry": 1,
+    "inject_target": "H999",
+    "seed": 42,
+    "n_tasks": 15,
+    "n_inject_probes": 10,
+    "n_unsafe_probes": 5,
+    "wall_clock_min": 27.98
+  }
+}
